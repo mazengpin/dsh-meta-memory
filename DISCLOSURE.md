@@ -8,6 +8,13 @@ One fused Cordis plugin: the memory half of the meta layer. It presents the cros
 It composes members by importing their own library modules; it copies no member and owns no store format of its own.
 Version `0.9.0`, licence MIT.
 
+## Why a memory surface belongs in the ecosystem
+
+Memory stores multiply: a profile can carry a store, a curated store and an admission ledger at once, each installed independently, so nobody chose the set and no single plugin owns it.
+A user therefore has to guess which store answered a recall, and a guess made from the order of installation is not a reading.
+A surface that reports the divergence as a census - counts per store, the numerator with its denominator beside it - lets a user see which store answered instead of guessing.
+The adjacency is the point: this package composes the neighbours and reports them side by side, and it does not merge their stores, their formats or their curation postures.
+
 ## 2. What it does today
 
 `pnpm run verify` is green. Every figure below is a fraction with its denominator:
