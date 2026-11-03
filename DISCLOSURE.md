@@ -21,7 +21,7 @@ Version `0.9.0`, licence MIT.
 The old Memory tab is RETIRED: `MEMORY_TAB_RETIRED = true` in `src/client/index.ts`. The harness ASSERTS the retirement instead of failing on it - the owner saw two sidebar entries named "Memory" and one surface is the fix, so a red check would be asserting the wrong thing.
 MEASURED, AND ONE EARLIER FIGURE DID NOT REPRODUCE: an earlier note stated gate-control 9 of 9 and route-probe 11 of 11. The same run that produced this file printed checks: 17 / 17 and checks: 9 / 9. The numbers above are the ones the harness printed; the older pair did not reproduce and is superseded here rather than repeated.
 
-`npm pack --dry-run` reports **15 files / 56.3 kB** - what a tarball would carry, not what a checkout carries.
+`npm pack --dry-run` reports **17 files / 60.3 kB** - what a tarball would carry, not what a checkout carries.
 
 ## 3. What it does NOT do
 
