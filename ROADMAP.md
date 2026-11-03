@@ -8,7 +8,7 @@ The memory half of the meta layer: what is remembered between turns and how it i
 
 ## What is measured today
 
-`pnpm run verify` green: parity 24 of 32, gate-control 9 of 9, route-probe 11 of 11, client-bundle 11 of 11, mutation 6 of 6 detected and restored; the old Memory tab is RETIRED (`MEMORY_TAB_RETIRED = true`) and the harness asserts the retirement explicitly instead of failing on it; `npm pack --dry-run` 15 files / 56.3 kB.
+`pnpm run verify` green: parity 24 of 32, gate-control 17 of 17, route-probe 9 of 9, client-bundle 11 of 11, mutation 6 of 6 detected and restored; the old Memory tab is RETIRED (`MEMORY_TAB_RETIRED = true`) and the harness asserts the retirement explicitly instead of failing on it; `npm pack --dry-run` 15 files / 56.3 kB.
 
 ## What 1.0.0 still requires
 
