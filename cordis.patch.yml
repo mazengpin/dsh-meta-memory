@@ -1,0 +1,16 @@
+# dsh-meta-memory bundle patch.
+#
+# `dsh.bundle.patch` in package.json points here. A profile that lists this
+# package in `dsh.profile.bundles` merges this layer at boot, and the single
+# `insert` below mounts the plugin's Host half as the loader row `meta-memory`.
+#
+# The row id is `meta-memory` and the row `name` is the PACKAGE name, which is
+# what the loader resolves through the profile's `node_modules` (where the
+# relative `link:` dependency puts this checkout). The id is deliberately not
+# the id of any member row: `dsh-memento`, `dsh-memory-injector` and
+# `dsh-memory-delta` stay mounted alongside this one, because decision D-0352
+# rule 3 keeps every member loaded until capability parity is proven and
+# unregistration is a separate, later, evidence-backed step.
+- insert:
+    - id: meta-memory
+      name: 'dsh-meta-memory'
