@@ -22,7 +22,8 @@
     "cordis.patch.yml",
     "README.md",
     "LICENSE",
-    "ROADMAP.md"
+    "ROADMAP.md",
+    "DISCLOSURE.md"
   ],
   "dsh": {
     "bundle": {

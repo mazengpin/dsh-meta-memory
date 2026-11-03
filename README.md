@@ -8,7 +8,7 @@ Stable pre-release `0.9.0`: ONE fused plugin that presents the cross-session mem
 It builds on the existing seam rather than duplicating it: `dsh-memento` stays the bounded layered store, `dsh-memory-delta` stays the inbox/facts/decisions store, and rolebox's `.rolebox/memory.db` sqlite+FTS5 layer is untouched.
 The two curation postures are kept SEPARATE on purpose: memento lets the model write under an approval policy, delta forbids the model from writing a fact at all. A fusion that merged them would be a capability loss.
 
-## Install (one shot, no manual steps)
+## Developing it from source (clone, build, relative link) - this is the DEVELOPER path, not the consumer install
 
 ```bash
 # 1. build the clone in place (lib/ is gitignored, so a fresh clone has no artifacts)
@@ -29,6 +29,16 @@ cd profiles-tree/personal-dev && pnpm install
 A `dsh.profile.bundles` change hot-reloads; everything else needs a restart.
 `cordis.patch.yml` carries the single `insert` row (`id: meta-memory`, `name: dsh-meta-memory`) the bundle merges at boot.
 Members are reached at run time by file URL, so they do NOT have to be present to boot: an absent member is reported as `absent` on `/meta-memory/api/members`, never as a zero.
+
+## Installing it (consumers) - the published pre-release only
+
+A consumer installs the PUBLISHED PRE-RELEASE and does not clone, build or link this repository.
+`package.json` sets `publishConfig.tag` to `next`, so `0.9.0` ships on the `next` dist-tag; `latest` is not this package.
+```bash
+pnpm add dsh-meta-memory@next
+```
+Cloning, building and adding a relative `link:` produce an UNRELEASED build: that is the developer path above, with no support commitment.
+Read `DISCLOSURE.md` before installing and `ROADMAP.md` before depending on a shape.
 
 ## What it publishes
 
