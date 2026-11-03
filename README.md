@@ -63,6 +63,19 @@ Read `DISCLOSURE.md` before installing and `ROADMAP.md` before depending on a sh
 
 With `injectRecall: false` the recall capability is PRESENT but quiet, and `/meta-memory/api/inject/status` says which state it is in rather than leaving a reader to infer it. Every gate failure path withholds recall and never breaks a turn.
 
+## Roadmap at a glance
+
+A glance, not a second record: the authoritative list — with the evidence for every done row, the reason for every deferred one and the rows marked `NOT MEASURED` — is [`ROADMAP.md`](ROADMAP.md). Where this list and that file differ, that file is right and this list is the defect.
+
+- **What this package is**
+- **What is measured today**
+- **What 1.0.0 still requires**
+- **Limits, stated rather than implied**
+- **Compatibility seam**
+- **How this roadmap is graded**
+
+The roadmap currently carries **0** row(s) marked `NOT MEASURED`; a row moves to done only when its own command prints a green result.
+
 ## Checks
 
 ```bash
