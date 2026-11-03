@@ -30,15 +30,16 @@ A `dsh.profile.bundles` change hot-reloads; everything else needs a restart.
 `cordis.patch.yml` carries the single `insert` row (`id: meta-memory`, `name: dsh-meta-memory`) the bundle merges at boot.
 Members are reached at run time by file URL, so they do NOT have to be present to boot: an absent member is reported as `absent` on `/meta-memory/api/members`, never as a zero.
 
-## Installing it (consumers) - the published pre-release only
+## Adopting it inside DSH - the published release only
 
-A consumer installs the PUBLISHED PRE-RELEASE and does not clone, build or link this repository.
-`package.json` sets `publishConfig.tag` to `next`, so `0.9.0` ships on the `next` dist-tag; `latest` is not this package.
-```bash
-pnpm add dsh-meta-memory@next
-```
-Cloning, building and adding a relative `link:` produce an UNRELEASED build: that is the developer path above, with no support commitment.
-Read `DISCLOSURE.md` before installing and `ROADMAP.md` before depending on a shape.
+A consumer adopts the PUBLISHED RELEASE and does not clone, build or link this repository; the developer path above is kept and produces an UNRELEASED build with no support commitment.
+What it provides: one surface over the cross-session memory family - one route prefix `/meta-memory`, four tools, and the retired sidebar tab described below - while `dsh-memento`, `dsh-memory-delta` and rolebox's own store stay mounted and unmodified.
+It sits beside the existing stores rather than replacing them: the layered store, the inbox/facts/decisions store and rolebox's own layer each keep their own writes and their own curation posture.
+What a deployment needs: the members it reaches, each with its own bundle row; the store paths it is given or inherits; and the approval posture of the member it writes through.
+How a profile enables a package: add the package name to that profile's `dsh.profile.bundles` list, then install the profile, because `cordis.patch.yml` carries the single `insert` row (`id: meta-memory`, `name: dsh-meta-memory`) that the bundle merges at boot.
+A source preview is READABLE but NOT installable: this tree can be read, built and linked for development, and no command in it installs the package.
+Adoption is by the published release: `package.json` sets `publishConfig.tag` to `next`, so `0.9.0` ships on the `next` dist-tag and a consumer takes the published tarball; `latest` is not this package.
+Read `DISCLOSURE.md` before adopting and `ROADMAP.md` before depending on a shape.
 
 ## What it publishes
 
